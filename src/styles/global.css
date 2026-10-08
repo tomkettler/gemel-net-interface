@@ -16,7 +16,7 @@ button { cursor:pointer; }
 .tabs button { border:0; background:transparent; padding:9px 16px; border-radius:7px; color:var(--muted); white-space:nowrap; min-block-size:44px; }
 .tabs button[aria-selected="true"] { background:white; color:var(--blue); font-weight:700; box-shadow:0 1px 2px #98a2b344; }
 .controls { display:grid; grid-template-columns:1.4fr repeat(3,minmax(150px,1fr)); gap:12px; padding:16px; margin-block:16px; }
-.control label { display:block; font-size:13px; font-weight:700; color:var(--muted); margin-block-end:4px; }
+.control label,.control-label { display:block; font-size:13px; font-weight:700; color:var(--muted); margin-block-end:4px; }
 .control input,.control select { inline-size:100%; min-block-size:44px; border:1px solid var(--line); border-radius:7px; padding-inline:10px; background:#fff; }
 .table-wrap { overflow:auto; }
 table { border-collapse:collapse; inline-size:100%; min-inline-size:860px; font-size:14px; }
@@ -36,3 +36,16 @@ tbody tr:hover { background:#f6faff; }
 footer { margin-block-start:32px; color:var(--muted); font-size:13px; line-height:1.7; }
 @media (max-width:760px) { .shell{padding:16px}.controls{grid-template-columns:1fr 1fr}.controls .control:first-child{grid-column:1/-1}.table-wrap{margin-inline:-16px}.tray{border-radius:10px; flex-wrap:wrap}.tray strong{inline-size:100%} }
 @media (prefers-reduced-motion:no-preference) { .tray { transition:transform .18s ease,box-shadow .18s ease; } }
+
+.company-picker { position:relative; }
+.company-picker summary { min-block-size:44px; display:flex; align-items:center; justify-content:space-between; padding:9px 12px; border:1px solid var(--line); border-radius:7px; background:#fff; cursor:pointer; list-style:none; }
+.company-picker summary::-webkit-details-marker { display:none; }
+.company-picker summary::after { content:"⌄"; color:var(--muted); }
+.company-picker[open] summary { border-color:var(--blue); border-end-start-radius:0; border-end-end-radius:0; }
+.company-picker-menu { position:absolute; z-index:5; inset-inline:0; inset-block-start:100%; max-block-size:280px; overflow:auto; padding:8px; border:1px solid var(--blue); border-block-start:0; border-radius:0 0 7px 7px; background:#fff; box-shadow:0 8px 20px #14213d22; }
+.company-clear { inline-size:100%; padding:8px; margin-block-end:4px; border:0; border-radius:5px; background:#f2f6fa; color:var(--blue); text-align:start; font:inherit; cursor:pointer; }
+.company-option { display:flex!important; align-items:center; gap:9px; padding:7px 6px; margin:0!important; border-radius:5px; color:var(--ink)!important; font-size:14px!important; font-weight:400!important; cursor:pointer; }
+.company-option:hover { background:#f6faff; }
+.company-option input { inline-size:16px; min-block-size:16px; accent-color:var(--blue); }
+
+.company-search { position:sticky; inset-block-start:-8px; inline-size:100%; min-block-size:40px; margin-block-end:6px; padding:7px 9px; border:1px solid var(--line); border-radius:5px; background:#fff; }
